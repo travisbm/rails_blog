@@ -7,14 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 10.times do
   post = Post.create({
-    post.title     = Faker::Book.title
-    post.body      = Faker::Lorem.paragraph
-    post.publisher = false
+    title: Faker::Book.title,
+    body:  Faker::Lorem.paragraph,
+    published: false
     })
-  (1, 3, 5).sample.times do
+  [1, 3, 5].sample.times do
     Comment.create({
-      post_id = post.id
-      message = Faker::Lorem.sentence
+      post_id: post.id,
+      message: Faker::Lorem.sentence
       })
   end
 end
