@@ -8,7 +8,7 @@
 10.times do
   post = Post.create({
     title: Faker::Book.title,
-    body:  Faker::Lorem.paragraph(5),
+    body:  Faker::Lorem.paragraph(30),
     published: false
     })
   [1, 3, 5].sample.times do
