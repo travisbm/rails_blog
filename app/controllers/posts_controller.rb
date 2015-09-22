@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    render template: 'posts/index.html.erb', locals: { all_posts: Post.all }
   end
 
   def show
