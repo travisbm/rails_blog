@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+body {
+  font-family: "microsoft yi baiti", Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none
+}
+
+a:hover {
+  color: blue;
+}
+
+a {
+  color: black;
+}
+
+li {
+  font-size: 25px;
+}

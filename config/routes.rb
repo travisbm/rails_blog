@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 #              PATCH  /posts/:id(.:format)         posts#update
 #              PUT    /posts/:id(.:format)         posts#update
 #              DELETE /posts/:id(.:format)         posts#destroy
+root 'posts#index'
 end

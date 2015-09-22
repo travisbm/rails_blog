@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    render template: 'posts/show.html.erb', locals: { post: Post.find(params[:id]) }
   end
 
   def create
