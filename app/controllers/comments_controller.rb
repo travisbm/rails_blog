@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @comment = Comment.new(post_id: params[:post_id])
     #params[:post_id]
     render template: 'comments/new.html.erb', locals: {
       comment: Comment.new
