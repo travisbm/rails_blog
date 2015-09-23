@@ -5,7 +5,16 @@ class CommentsController < ApplicationController
   end
 
   def show
-    render template: 'comments/show.html.erb', locals: { comments: Comment.all.where(post_id: params[:id])}
+    render template: 'comments/show.html.erb', locals: {
+      comments: Comment.all.where(post_id: params[:id])
+    }
+  end
+
+  def new
+    #params[:post_id]
+    render template: 'comments/new.html.erb', locals: {
+      comment: Comment.new
+    }
   end
 
   def create

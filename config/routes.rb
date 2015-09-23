@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 
-  resources :post, :has_many => [:comments]
 
 #     comments GET    /comments(.:format)          comments#index
 #              POST   /comments(.:format)          comments#create
