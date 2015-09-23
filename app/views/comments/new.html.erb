@@ -1,0 +1,11 @@
+<h1>Create Comment</h1>
+
+<%= form_for [@post, @comment] do |f| %>
+
+  <p>
+  <%= f.label :comment%>
+  <%= f.text_area :message, size: "60x12" %>
+  </p>
+
+  <%= f.submit "Create" %>
+<% end %>

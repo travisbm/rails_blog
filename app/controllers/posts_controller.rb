@@ -6,14 +6,23 @@ class PostsController < ApplicationController
 
   def show
     render template: 'posts/show.html.erb', locals: { post: Post.find(params[:id]),
-                                          comments: Comment.all.where(post_id: params[:id])}
+                                          comments: Post.find(params[:id]).comments }
   end
 
   def create
+    post = Post.new
+    post.title   = params.fetch(:post).fetch(:title)
+    post.body   = params.fetch(:post).fetch(:body)
+    post.published = false
+    if post.save
+      redirect_to post_path(post)
+    else
+      redirect_to posts_path #If post didn't save, go back to wits index :(
+    end
   end
 
   def new
-    render template: 'posts/new.html.erb'
+    @post = Post.new
   end
 
   def update

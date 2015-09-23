@@ -12,9 +12,9 @@
     published: false
     })
   [1, 3, 5].sample.times do
-    Comment.create({
-      post_id: post.id,
+    post.comments.build({
       message: Faker::Lorem.sentence
       })
+  post.save
   end
 end

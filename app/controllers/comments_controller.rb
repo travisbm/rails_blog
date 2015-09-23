@@ -9,6 +9,15 @@ class CommentsController < ApplicationController
   end
 
   def create
+    comment = comment.new
+    comment.post_id   = Post.where(title: params.fetch(:comment).fetch(:title))
+    comment.body      = params.fetch(:comment).fetch(:body)
+    comment.published = false
+    if comment.save
+      redirect_to comment_path(comment)
+    else
+      redirect_to comments_path #If comment didn't save, go back to wits index :(
+    end
   end
 
   def update

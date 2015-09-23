@@ -17,6 +17,18 @@ body {
   font-family: "microsoft yi baiti", Helvetica, sans-serif;
 }
 
+.banner ul {
+  display: table;
+  margin: 0 auto 0 auto;
+  width: 100%;
+  list-style-type: none;
+}
+
+.banner ul li {
+  display: table-cell;
+  text-align: center;
+}
+
 a {
   text-decoration: none
 }

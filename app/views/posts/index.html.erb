@@ -1,5 +1,6 @@
-<ol>
+<ul>
   <% all_posts.each do |post| %>
     <li><a href = '/posts/<%= post.id %>'><%= post.title %></a></li>
+    <p><%= post.body %></p>
   <% end %>
-</ol>
+</ul>
